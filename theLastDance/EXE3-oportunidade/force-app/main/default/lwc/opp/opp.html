@@ -1,0 +1,10 @@
+<template>
+  <lightning-card title="Nova oportunidade">
+  <div>
+    <lightning-input label="Nome da oportunidade" required value={oppName}></lightning-input>
+    <lightning-input label="Data de Fechamento" type="date" required value={closeDate} onchange={handleCloseDateChange}></lightning-input>
+    <lightning-combobox label="Fase" value={stageName} options={stageOptions} required onchange={handleStageChange}></lightning-combobox><br>
+    <lightning-button label="Salvar" onclick={createOpportunity}></lightning-button>
+  </div>
+ </lightning-card>
+</template>
