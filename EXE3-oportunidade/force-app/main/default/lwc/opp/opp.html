@@ -1,0 +1,10 @@
+<template>
+  <lightning-card title="Nova oportunidade" text-align="center">
+    <div class="abobrinha">
+      <lightning-input class="slds-form-element_small" label="Nome da oportunidade" required value={oppName} onchange={handleNameChange}></lightning-input>
+      <lightning-input class="slds-form-element_small" label="Data de Fechamento" type="date" required value={closeDate} onchange={handleCloseDateChange}></lightning-input>
+      <lightning-combobox class="slds-form-element_small" label="Fase" value={stageName} options={stageOptions} required onchange={handleStageChange}></lightning-combobox><br>
+      <lightning-button label="Salvar" onclick={handleSave}></lightning-button>
+    </div>
+  </lightning-card>
+</template>

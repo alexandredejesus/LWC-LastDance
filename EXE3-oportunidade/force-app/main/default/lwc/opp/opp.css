@@ -1,0 +1,32 @@
+
+/* Ajusta a margem dos botões */
+lightning-button {
+    margin: 10 10px 0 0; /* margem direita de 10px */
+    margin-top: auto;
+    margin-left: 15px;
+    padding-top: 8px;
+  }
+  
+  /* Ajusta a margem dos campos de digitação */
+  lightning-input {
+    margin-bottom: 10px; /* margem inferior de 10px */
+    background-color: rgb(254, 255, 255);
+    
+
+  }
+
+  .slds-form-element_small{
+    margin: 10 10px 0 0;
+    width: 365px;
+    padding-left: 8px;
+  }
+
+  .abobrinha{
+    border-radius: 4.5px;
+    border-color: rgb(60, 55, 55);
+  }
+  .titulo{
+    text-align: center;
+    text-decoration: underline;
+  }
+  
