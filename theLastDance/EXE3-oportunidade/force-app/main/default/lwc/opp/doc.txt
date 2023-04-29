@@ -1,0 +1,15 @@
+As primeiras linhas definem o template HTML do componente, que inclui um Lightning Card com vários campos de entrada, como Nome da oportunidade, Data de Fechamento, Fase e um botão Salvar.
+A linha "import { LightningElement, api, wire } from 'lwc';" importa as classes e funções do LWC necessárias para criar o componente.
+A próxima linha importa a função "createRecord" da biblioteca de APIs do Lightning. Esta função é usada para criar um registro na plataforma Salesforce.
+As linhas seguintes importam duas funções da biblioteca "uiObjectInfoApi" do Lightning que são usadas para obter informações sobre o objeto de oportunidade do Salesforce e suas fases.
+A próxima linha define a constante "OPPORTUNITY_OBJECT" com o nome do objeto de oportunidade no Salesforce. Isso é usado em vários lugares no código.
+A linha seguinte define a constante "OPPORTUNITY_STAGE_FIELD" com o nome do campo de Fase na oportunidade do Salesforce.
+A próxima linha define a classe JavaScript "CreateOpportunity", que estende a classe "LightningElement" do LWC. Esta classe é exportada para ser usada em outros componentes ou aplicativos.
+A linha "@api recordId;" define uma propriedade pública do componente para armazenar o ID do registro de oportunidade criado pelo usuário.
+As linhas seguintes definem algumas variáveis ​​e propriedades para o componente, como o nome da oportunidade, a data de fechamento e as opções de fase.
+A linha "@wire(getObjectInfo, { objectApiName: OPPORTUNITY_OBJECT })" usa o recurso "wire" do LWC para obter informações sobre o objeto de oportunidade do Salesforce. O resultado é armazenado na propriedade "opportunityInfo".
+A linha "@wire(getPicklistValues, { recordTypeId: '$opportunityInfo.data.defaultRecordTypeId', fieldApiName: OPPORTUNITY_STAGE_FIELD })" usa o recurso "wire" do LWC para obter as opções de fase do objeto de oportunidade. O resultado é armazenado na variável "stageOptions".
+A função "handleStageChange(event)" é chamada quando o usuário seleciona uma nova fase no campo de entrada. Ele atualiza a propriedade "stageName" com o valor selecionado.
+A função "handleCloseDateChange(event)" é chamada quando o usuário seleciona uma nova data no campo de entrada. Ele atualiza a propriedade "closeDate" com o valor selecionado.
+A função "createOpportunity()" é chamada quando o usuário clica no botão Salvar. Ele cria um objeto de registro com os valores inseridos pelo usuário e usa a função "createRecord" do Lightning para criar um registro de oportunidade no Salesforce. Se a criação for bem-sucedida, um evento "recordcreated" é despachado e as propriedades do componente são redefinidas para permitir que o usuário insira outra oportunidade.
+As linhas finais tratam os erros que possam ocorrer durante o processo de criação do registro e atualizam as propriedades do componente se a criação for bem-sucedida.
